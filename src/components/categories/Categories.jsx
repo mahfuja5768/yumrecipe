@@ -7,6 +7,7 @@ import { FreeMode, Pagination } from "swiper/modules";
 
 import Container from "../shared/Container";
 import Button from "../shared/Button";
+import SectionTitle from "../shared/SectionTitle";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -44,6 +45,7 @@ const Categories = () => {
 
   return (
     <Container className=" ">
+      <SectionTitle title={"RECIPE Categories"} />
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
@@ -57,21 +59,27 @@ const Categories = () => {
         {categories?.map((item) => (
           <SwiperSlide
             key={item?.idCategory}
-            className="bg-secondary bg-opacity-15 border-2 rounded border-primary border-opacity-20  md:mb-12 mb-3 "
+            className="bg-primary bg-opacity-10  rounded-3xl border-4 relative pb-[200px]  border-primary border-opacity-30  md:mb-12 mb-3 "
           >
-            <img className="lg:p-5 p-3" src={item?.strCategoryThumb} alt="" />
-            <div className="bg-[#fefcfa] md:px-4 px-3 py-2 flex flex-col justify-center items-center">
-              <h3 className="md:text-2xl text-xl my-2 uppercase text-primary font-semibold">
+            <div className=" md:px-4 px-3 py-2 flex flex-col justify-center items-center">
+              <h3 className="md:text-2xl text-xl my-2 uppercase font-bold">
                 {item?.strCategory}
               </h3>
               <p className=" md:text-justify py-2">
                 {item?.strCategoryDescription.slice(0, 200)}
               </p>
+            </div>
+            <div className="ps-3">
               <Button
                 onclick={() => handleClick(item?.strCategory)}
                 text={"See Recipes"}
               />
             </div>
+            <img
+              className="border-2 bg-primary p-4 border-secondary border-opacity-90 md:w-44 rounded-full md:h-44 absolute bottom-0 right-0 "
+              src={item?.strCategoryThumb}
+              alt=""
+            />
           </SwiperSlide>
         ))}
       </Swiper>
