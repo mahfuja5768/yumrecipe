@@ -1,3 +1,4 @@
+import AreaFiltered from "../components/AreaFiltered/AreaFiltered";
 import Banner from "../components/banner/Banner";
 import Categories from "../components/categories/Categories";
 
@@ -6,6 +7,7 @@ const Home = () => {
     <div>
       <Banner />
       <Categories />
+      <AreaFiltered />
     </div>
   );
 };
