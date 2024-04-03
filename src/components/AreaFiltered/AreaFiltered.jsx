@@ -7,7 +7,7 @@ const AreaFiltered = () => {
   const [areas, setAreas] = useState([]);
   const [area, setArea] = useState("American");
 //   const [active, setActive] 
-  console.log(area);
+  // console.log(area);
   useEffect(() => {
     const fetchedData = async () => {
       try {

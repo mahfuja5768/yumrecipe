@@ -6,6 +6,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Container from "../shared/Container";
 import Button from "../shared/Button";
 import { getImgUrl } from "../../utils/getImagePath";
+import { motion } from "framer-motion";
 
 const Slider = ({ bannerContent }) => {
   return (
@@ -35,21 +36,30 @@ const Slider = ({ bannerContent }) => {
             <div className="absolute inset-0 flex items-center justify-center text-white">
               <Container>
                 <div className="flex   md:justify-center md:flex-row gap-2 flex-col md:gap-3 items-center">
-                  <div className="flex  md:justify-start gap-1  flex-col md:gap-3 md:items-start">
+                  <motion.div
+                    initial={{ opacity: 0, x: "-100vh" }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                    className="flex  md:justify-start gap-1  flex-col md:gap-3 md:items-start"
+                  >
                     {" "}
                     <h3 className="lg:text-4xl md:text-3xl  text-xl pt-5 font-bold md:mb-3">
                       {item.title}
                     </h3>
                     <p className="text-gray-200">{item.para}</p>
                     <Button text={"Read More"} />
-                  </div>
-                  <div>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: "-100vh" }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1 }}
+                  >
                     <img
                       className="md:w-full mx-auto w-1/4 h-[1/4]"
                       src={getImgUrl(item.sideBg)}
                       alt=""
                     />
-                  </div>
+                  </motion.div>
                 </div>
               </Container>
             </div>
