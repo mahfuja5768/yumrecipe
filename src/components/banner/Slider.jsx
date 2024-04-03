@@ -26,7 +26,7 @@ const Slider = ({ bannerContent }) => {
     >
       {bannerContent?.map((item) => (
         <SwiperSlide key={item.id}>
-          <div className="relative md:h-[70vh] h-[90vh] overflow-hidden">
+          <div className="relative md:h-[80vh] h-[90vh] overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${item.url})` }}

@@ -70,7 +70,7 @@ const Categories = () => {
                 {item?.strCategory}
               </h3>
               <p className=" md:text-justify py-2">
-                {item?.strCategoryDescription.slice(0, 200)}
+                {item?.strCategoryDescription?.slice(0, 200)}
               </p>
             </div>
             <div className="ps-3">

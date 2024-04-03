@@ -11,8 +11,8 @@ const Recipes = ({ area }) => {
           `https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`
         );
         const data = await res.json();
-        console.log(data.meals);
-        setRecipes(data?.meals.slice(0, 12));
+        // console.log(data.meals);
+        setRecipes(data?.meals?.slice(0, 12));
       } catch (error) {
         console.log(error);
       }
@@ -21,7 +21,7 @@ const Recipes = ({ area }) => {
   }, [area]);
 
   return (
-    <div className="mt-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mb-6">
+    <div className="mt-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4  gap-4 mb-6">
       {recipes?.map((item) => (
         <Card key={item?.idMeal} item={item} />
       ))}
